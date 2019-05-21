@@ -1,0 +1,41 @@
+.table {
+  position: relative;
+  z-index: 1;
+  width: 1200px;
+  margin: 0px;
+  overflow: hidden;
+
+  background: #f8f9fa;
+}
+
+.cell {
+  float: left;
+  margin: 6 px;
+  width: 200px;
+  padding: 0.5cm;
+}
+
+.cell:before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  bottom: 6px + 3px;
+  width: 2000px;
+  height: 90%;
+}
+
+.column_3 {
+    position: relative;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline;
+    transition: transform .2s;
+    padding: 0.5cm
+}
+
+.cell:hover {
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
