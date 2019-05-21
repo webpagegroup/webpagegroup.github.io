@@ -1,0 +1,256 @@
+<html>
+    <head>
+        <meta charset=utf-8 />
+        <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+         <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <script src='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.js'></script>
+        <link href='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.css' rel='stylesheet' />
+        <script src='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
+        <link href='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet'/>
+        <link rel="stylesheet" type="text/css" href="css/charts.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.2.0/mapbox-gl-geocoder.min.js'></script>
+        <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.2.0/mapbox-gl-geocoder.css' type='text/css' />
+        <link rel="stylesheet" type="text/css" href="css/base.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+        <link rel="stylesheet" href="css/colorful.css">
+        <link rel="stylesheet" href="css/charts.css">
+<!--Highchart
+        <script src="https://code.highcharts.com/maps/highmaps.js"></script>
+        <script src="https://code.highcharts.com/modules/tilemap.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+        <script src="https://code.highcharts.com/modules/offline-exporting.js"></script>    
+<!--Amchart-->
+        <script type="text/javascript" src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+		<script type="text/javascript" src="https://www.amcharts.com/lib/3/pie.js"></script>
+        <script type="text/javascript" src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+        <!-- amCharts javascript sources -->
+		<script type="text/javascript" src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+		<script type="text/javascript" src="https://www.amcharts.com/lib/3/serial.js"></script>
+		<script type="text/javascript" src="./javascript/all_airbnb.js"></script> -->
+        
+        
+    </head>
+    <style>
+
+        
+        #chartdiv {
+          width: 100%;
+          height: 350px;
+        }
+
+        .main { padding-left: 300px;margin-top: 50px; }
+        .side-navs { position: fixed;left: 90px;top: 100px; }
+        .side-navs a { color: #3a4a5a;display: block;text-decoration: none;font-size: 15px;padding: 10px; }
+        .side-navs a:hover { background-color: #def; }
+        
+        </style>
+
+    <body>
+            <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
+                    <div class="container">
+                      <a class="navbar-brand" href="#"></a><a class="btn navbar-btn btn-outline-light" href="index.html">HOMEPAGE</a>
+                      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar3SupportedContent" aria-controls="navbar3SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+                      <div class="collapse navbar-collapse text-center justify-content-end" id="navbar3SupportedContent">
+                        <a class="btn navbar-btn btn-outline-light" href="background.html">Background</a><a class="btn navbar-btn btn-outline-light" href="mapping.html">Mapping</a><a class="btn navbar-btn btn-outline-light" href="analysis.html">Analysis</a><a class="btn navbar-btn btn-outline-light" href="about.html">About us</a>
+                      </div>
+                    </div>
+             </nav>
+       
+
+        <div class="main">
+            <div class="side-navs" style="opacity: 0.5;">
+            </br></br>
+                <a<strong>Outline</strong></a>
+                <a href="#title1">How it works</a>
+                <a href="#title2">The development performance</a>
+                <a href="#title3">Homeowner occupancy and vacancy</a>
+                <a href="#title4">ousing affordability index</a>
+            </div>
+            <br>
+            
+            
+            <div id="text">
+            <h3>Explore Timeline</h3>    
+            <div id="chartdiv"></div>
+             <p>The part gives the Economy behind Airbnb. Roughly take 3 minutes to Read. </p>
+             <div id="allairbnb" style="width: 100%; height: 400px; background-color: #FFFFFF;" ></div>
+            <h3>Part I: The development of Airbnb and its performance in New York City</h3>    
+            <h4 id="title1" style="margin: 0% 0%;">How it works: </h4>
+            <p><i>Key Facts</i></p>
+            <p>
+            Airbnb structures a platform to display short term 
+            accommodation provision and relevant leisure activities from local hosts, 
+            and guests are able to search and compare their desired lodging with their preferred price, 
+            location, dates and housing style. (Airbnb, 2019) In this way, the homeowners are able to further 
+            make fully use of their underutilized home space or products. 
+                </p> 
+
+            <p><i>Peer to peer platform:</i></br>
+                Airbnb is a significant part of ‘sharing economy’, which bases on Peer to peer(P2P) platform: 
+                consumers and producers can directly interact without the intermediation of third party. 
+                The platform itself as intermediary can effectively promote higher market flexibility and lower short-rental housing provision risks. 
+                Together with the application of the internet tools, 
+                the platform further decreases the transaction cost form both sides. (Horton & Zeckhauser, 2016)
+            </p>
+            
+            
+            <h4 id="title2" style="margin: 0% 0%;">The development performance:</h4>    
+            <p><i>Worldwide:</i></p>
+            <p>- Airbnb's market offers more than 6 million unique accommodations in nearly 100,000 cities and 191 countries. It also creates unprecedented opportunities to local communities and interests by hosting over 30,000 unique craft events and more than 1,000 markets worldwide.
+                (Airbnb, 2019)
+            </br>
+               - Airbnb has been worth approximately $31 billion valuation since 2016, which becoming the second-most valuable start-up in the U.S. (after Uber) (Thomas, 2017)
+            </br>   
+               - Airbnb has made over $1 billion dollars in revenue during the third quarter in 2018. (TechCrunch, 2018)
+            </br>   
+               - Airbnb has put forward the plan for IPO in the coming 2019. (Bach,2018)
+            </p>
+            </br>
+            <p><i>In New York City context:</i></p>    
+            <p>- Remarkable annual growth of the numbers of Airbnb accommodation in New York City.
+            </br>
+               - Entire home lodging type present a more rapidly increase during the past five years in New York City.
+            </br>             
+               - Private room experience the increase from 2015 to 2018, while there is a slightly reduction from 2018, as well as the sharing room, slower developed since 2016, and decrease from 2018.
+                    
+            </p>
+            </br> 
+            <h3>Part II: How About Housing</h3> 
+            <p>New York City is facing inability to meet the demand of local affordability housing provision, 
+               which results from the reduction of purchase power caused by limited income and growing housing price in the market. In relation to Airbnb, 
+                it has been discovered that in 2014 there have already been more than 4,600 Airbnb units in New York City being booked for over three months in a year, leading to discussion 
+                of its further impacts on the supply of housing stock and housing affordability. (Sheppard and Udell, 2016)</p>
+             <h4 id="title3" style="margin: 0% 0%;">Homeowner occupancy and vacancy: </h4>   
+             
+             <p>New York City present a higher percentage of rent activities, comparing to other cities in the United States. Refer to the statistics in 2015, 
+                 there are only 41% of housing units occupied by owners, while 51% of choose to rent the house, who will also require paying higher property tax as a part 
+                 of the housing market value. As of 2017, New York City remains a tight housing market, with rental vacancy rate of 3.63% and 11.5% of all rental housing considered overcrowded. 
+                 (New York City Rent Guidelines Board, 2018) The increasing Airbnb accommodation directly influence the reduction of vacant houses in the market, 
+                 and the reallocation of housing inventory.</p>
+                
+                 <div id="typepie" style="width: 100%; height: 400px; background-color: #FFFFFF;" ></div>
+                </br>
+            <h4 id="title4" style="margin: 0% 0%;">Housing affordability index:</h4>    
+            <p>New York City displays the second highest homeownership burden in the country, with over 54% of median annual household income allocated towards housing costs. Despite high income, 
+                New Yorkers were faced with very high housing costs as well as property taxes.</p>
+            
+                <p align="center"><img src="./img/background_2.png" width="250"   alt="b_2" /></p>
+            
+            <h3>Part III: Debate</h3>
+            <p>For a highly constrained and regulated housing market in New York City, will the growing 
+                Airbnb development further threaten the housing market stability? </p>
+            <p><i>It is a threat:</i></br>
+             </p>1.	The concentration of Airbnb provision has led to negative externality in local neighbourhood, which result in the reduction of property value.
+            </br>
+             2.	There are so many Airbnb cases existing in the boundary of local laws on housing market and breaking some local regulations on residential and commercial uses buildings, which is harmful for the health of housing market and future city planning. 
+            </br>
+             3.	It will last long-term social negative impacts, when more and more owner-occupied houses becoming investment product, it inevitably intensity the gentrification
+             
+            <p>It is an opportunity:</br>
+                1.	The development of Airbnb is strikingly promoting the local tourism, which meanwhile raise the demand on local products and services. The upgrade of local facilities result in the rise of property value.
+            </br>
+                2.	The utilization of vacancy houses can reduce the vacancy rate in New York City.
+            </br>   
+                3.	It is an opportunity for local residents to earn extra income in a flexible and high-return rate approach. With the growth of income level, the housing affordability can be relieved. 
+                
+            
+            </p>
+            <div id="ideamap"></div>
+            
+            <script  src="javascript/backgroun_flow.js" ></script>
+            <script  src="javascript/chartdiv.js" ></script>
+            <script  src="javascript/ideamap.js" ></script>
+            <!-- Resources -->
+<script src="https://www.amcharts.com/lib/4/core.js"></script>
+<script src="https://www.amcharts.com/lib/4/charts.js"></script>
+<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+            <script>
+                am4core.ready(function() {
+                
+                // Themes begin
+                am4core.useTheme(am4themes_animated);
+                // Themes end
+                
+                // Create chart instance
+                var chart = am4core.create("chartdiv", am4charts.XYChart);
+                
+                // Add data
+                chart.data = [{
+                  "x": "1",
+                  "y": 1,
+                  "text": "[bold]General Info[/]\nThere seems to be some furry animal living in the neighborhood.",
+                  "center": "bottom"
+                }, {
+                  "x": "2",
+                  "y": 1,
+                  "text": "[bold]Airbnb[/]\nWe're now mostly certain it's a fox.",
+                  "center": "top"
+                }, {
+                  "x": "3",
+                  "y": 1,
+                  "text": "[bold]How it works on Housing Market?[/]\nOur dog does not seem to mind the newcomer at all.",
+                  "center": "bottom"
+                }, {
+                  "x": "4",
+                  "y": 1,
+                  "text": "[bold]Idea Map[/]\nThe quick brown fox jumps over the lazy dog.",
+                  "center": "top"
+                }];
+                
+                // Create axes
+                var xAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+                xAxis.dataFields.category = "x";
+                xAxis.renderer.grid.template.disabled = true;
+                xAxis.renderer.labels.template.disabled = true;
+                xAxis.tooltip.disabled = true;
+                
+                var yAxis = chart.yAxes.push(new am4charts.ValueAxis());
+                yAxis.min = 0;
+                yAxis.max = 1.99;
+                yAxis.renderer.grid.template.disabled = true;
+                yAxis.renderer.labels.template.disabled = true;
+                yAxis.renderer.baseGrid.disabled = true;
+                yAxis.tooltip.disabled = true;
+                
+                
+                // Create series
+                var series = chart.series.push(new am4charts.LineSeries());
+                series.dataFields.categoryX = "x";
+                series.dataFields.valueY = "y";
+                series.strokeWidth = 4;
+                series.sequencedInterpolation = true;
+                
+                var bullet = series.bullets.push(new am4charts.CircleBullet());
+                bullet.setStateOnChildren = true;
+                bullet.states.create("hover");
+                bullet.circle.radius = 10;
+                bullet.circle.states.create("hover").properties.radius = 15;
+                
+                var labelBullet = series.bullets.push(new am4charts.LabelBullet());
+                labelBullet.setStateOnChildren = true;
+                labelBullet.states.create("hover").properties.scale = 1.2;
+                labelBullet.label.text = "{text}";
+                labelBullet.label.maxWidth = 150;
+                labelBullet.label.wrap = true;
+                labelBullet.label.truncate = false;
+                labelBullet.label.textAlign = "middle";
+                labelBullet.label.paddingTop = 20;
+                labelBullet.label.paddingBottom = 20;
+                labelBullet.label.fill = am4core.color("#999");
+                labelBullet.label.states.create("hover").properties.fill = am4core.color("#000");
+                
+                labelBullet.label.propertyFields.verticalCenter = "center";
+                
+                
+                chart.cursor = new am4charts.XYCursor();
+                chart.cursor.lineX.disabled = true;
+                chart.cursor.lineY.disabled = true;
+                
+                }); // end am4core.ready()
+                </script>
+                
+                <!-- HTML -->
+             
+    </body>
+</html>

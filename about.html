@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8 />
+        <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <link rel="stylesheet" type="text/css" href="css/about.css" />
+        <script src='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.js'></script>
+        <link rel='stylesheet' href='https://cdn3.devexpress.com/jslib/18.2.8/css/dx.common.css'>
+        <link rel='stylesheet' href='https://cdn3.devexpress.com/jslib/18.2.8/css/dx.light.css'>
+        <link href='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.css' rel='stylesheet' />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+        <link rel="stylesheet" href="css/colorful.css">
+        <script src='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
+        <link href='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet'/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.2.0/mapbox-gl-geocoder.min.js'></script>
+        <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.2.0/mapbox-gl-geocoder.css' type='text/css' />
+    </head>
+
+    <body>
+            <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
+                    <div class="container">
+                      <a class="navbar-brand" href="#"></a><a class="btn navbar-btn btn-outline-light" href="index.html">HOMEPAGE</a>
+                      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar3SupportedContent" aria-controls="navbar3SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+                      <div class="collapse navbar-collapse text-center justify-content-end" id="navbar3SupportedContent">
+                        <a class="btn navbar-btn btn-outline-light" href="background.html">Background</a><a class="btn navbar-btn btn-outline-light" href="mapping.html">Mapping</a><a class="btn navbar-btn btn-outline-light" href="analysis.html">Analysis</a><a class="btn navbar-btn btn-outline-light" href="about.html">About us</a>
+                      </div>
+                    </div>
+             </nav>
+       
+      
+<!-- A Brif Intro -->
+        <div>
+            <h4>ABOUT</h4>
+            <br>
+            <div id="text">
+            
+            <h3>Our Team</h3>    
+            <p>We are fice Chinese students from Centre for Advanced Spatial Analysis (CASA) in University College London (UCL). We are curious about the influence factors of Housing prices. As the property type and housing data is relatively completed in NYV, we decide to make use of data to explore such interesting issue.</p> 
+            <br>
+<!-- This part is Team Info -->
+        <div class="py-5 text-center" id="who">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12"> </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 px-4 mb-4 col-6 px-lg-5">
+                <a data-toggle="modal" data-target=".yellow" href="">
+                  <div class="card project">
+                    <img class="card-img rounded-circle" src="img/yellow.jpg" alt="Card image">
+                    <div class="card-body p-0">
+                      <p class="mt-3 mb-1"><b>Ran JU</b></p>
+                      <p class="text-muted m-0"><small>Quantative Analst</small></p>
+                      <p class="text-muted m-0"><small>Front End Developing/Quantatitive Analysis</small></p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-4 px-4 mb-4 col-6 px-lg-5">
+                <a data-toggle="modal" data-target=".cyan" href="">
+                  <div class="card project">
+                    <img class="card-img rounded-circle" src="img/cyan.jpg" alt="Card image">
+                    <div class="card-body p-0">
+                      <p class="mt-3 mb-1"><b>Ming CHEN</b></p>
+                      <p class="text-muted m-0"><small>Webpage Designer</small></p>
+                      <p class="text-muted m-0"><small>Colour Design/ Content Writer</small></p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-4 px-4 mb-4 col-6 px-lg-5">
+                <a data-toggle="modal" data-target=".red" href="">
+                  <div class="card project">
+                    <img class="card-img rounded-circle" src="img/red.jpg" alt="Card image">
+                    <div class="card-body p-0">
+                      <p class="mt-3 mb-1"><b>Rui SHANG</b></p>
+                      <p class="text-muted m-0"><small>Webpage Architect</small></p>
+                      <p class="text-muted m-0"><small>Front End Developing/Geospatial Analysis</small></p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-4 px-4 mb-4 col-6 px-lg-5">
+                <a data-toggle="modal" data-target=".purple" href="">
+                  <div class="card project">
+                    <img class="card-img rounded-circle" src="img/purple.jpg" alt="Card image">
+                    <div class="card-body p-0">
+                      <p class="mt-3 mb-1"><b>ZiAng YUE</b></p>
+                      <p class="text-muted m-0"><small>Analst/Database</small></p>
+                      <p class="text-muted m-0"><small>Back End Developing</small></p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-4 px-4 mb-4 col-6 px-lg-5">
+                <a data-toggle="modal" data-target=".white" href="">
+                  <div class="card project">
+                    <img class="card-img rounded-circle" src="img/white.jpg" alt="Card image">
+                    <div class="card-body p-0">
+                      <p class="mt-3 mb-1"><b>ShenQi Xu</b></p>
+                      <p class="text-muted m-0"><small></small></p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-4 px-4 mb-4 col-6 px-lg-5">
+                <a data-toggle="modal" data-target=".blue" href="">
+                  <div class="card project">
+                    <img class="card-img rounded-circle" src="img/blue.jpg" alt="Card image">
+                    <div class="card-body p-0">
+                      <p class="mt-3 mb-1"><b>Github</b></p>
+                      <p class="text-muted m-0"><small>Version Controll</small></p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          
+        <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+        <script src='https://cdn3.devexpress.com/jslib/18.2.8/js/dx.all.js'></script>
+        
+          
+        
+        <script  src="javascript/team.js"></script>
+            
+           
+
+            </footer>
+            </body>
+            </html>

@@ -1,0 +1,193 @@
+<html>
+    <head>
+        <meta charset=utf-8 />
+        <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <script src='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.js'></script>
+        <link href='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.css' rel='stylesheet' />
+        <script src='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
+        <link href='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet'/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.2.0/mapbox-gl-geocoder.min.js'></script>
+        <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.2.0/mapbox-gl-geocoder.css' type='text/css' />
+        <link rel="stylesheet" type="text/css" href="css/base.css"/>
+        <link rel="stylesheet" type="text/css" href="css/charts.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+        <link rel="stylesheet" href="css/colorful.css">
+        <script src="js/jquery.flot.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/highcharts-more.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+        <script src="https://code.highcharts.com/modules/export-data.js"></script>
+        <script src="https://code.highcharts.com/modules/histogram-bellcurve.js"></script>
+        <script src="https://code.highcharts.com/modules/timeline.js"></script>
+        <script src="https://code.highcharts.com/modules/heatmap.js"></script> 
+		<script type="text/javascript" src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+		<script type="text/javascript" src="https://www.amcharts.com/lib/3/serial.js"></script> 
+        
+        <style>
+           #chartdiv {
+          width: 100%;
+          height: 350px;
+        }
+
+        .main { padding-left: 300px;margin-top: 50px; }
+        .side-navs { position: fixed;left: 90px;top: 100px; }
+        .side-navs a { color: #3a4a5a;display: block;text-decoration: none;font-size: 15px;padding: 10px; }
+        .side-navs a:hover { background-color: #def; }
+
+        .ellipse { width: 800px;height: 600px;position: relative; }
+		.ellipse .main { height: 550px;background-size: 100% 100%; }
+		.ellipse .bottom { height: 50px;background-color: #2a3a4a;display: flex;align-items: center;justify-content: center; }
+		.ellipse .bottom select { width: 250px;height: 30px;font-size: 18px;background-color: #3a4a5a;color: white; }
+		.ellipse .tip { padding: 5px 15px;background-color: white;border-radius: 5px;font-size: 16px;color: #2a3a4a;position: absolute;visibility: hidden; }
+		.ellipse .tip span { display: block; }
+        </style> 
+    </head>
+
+    <body>
+
+            <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
+                    <div class="container">
+                      <a class="navbar-brand" href="#"></a><a class="btn navbar-btn btn-outline-light" href="index.html">HOMEPAGE</a>
+                      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar3SupportedContent" aria-controls="navbar3SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+                      <div class="collapse navbar-collapse text-center justify-content-end" id="navbar3SupportedContent">
+                        <a class="btn navbar-btn btn-outline-light" href="background.html">Background</a><a class="btn navbar-btn btn-outline-light" href="mapping.html">Mapping</a><a class="btn navbar-btn btn-outline-light" href="analysis.html">Analysis</a><a class="btn navbar-btn btn-outline-light" href="about.html">About us</a>
+                      </div>
+                    </div>
+             </nav>
+       
+            </br></br>
+
+        
+          
+            <div class="main">
+                <div class="side-navs" style="opacity: 0.5;">
+                    </br></br>
+                    <a<strong>Outline</strong></a>
+                    <a href="#title1">Analyisi and Visualization</a>
+                    <a href="#title2">Quantative Economy</a>
+                    <a href="#title3">Geospatial Distribution</a>
+                    <a href="#title4">Limitations</a>
+                </div>
+                <div>
+                    <h4 id="title1">Analyisi and Visualization</h4>
+                </br>
+                    <div id="text">
+                        <p></p>
+                        <div id="heat_map" style="height: 400px; min-width: 310px; max-width: 800px; margin: 0 auto"></div>
+      
+                        <p>Correlation Conclusion</p>
+                    </div>
+                </br>
+                    
+                    <div id="text">
+                        <h3 id="title2">Quantative Economy</h3>
+                        <p>This section will provide an overview of the analysis. The project <a href="">report</a> and <a href="">code</a> can be downloaded from the Github <a href="">Github repository</a>.</p>
+                        
+                        <p>Based on requirement of stay nights, Airbnb could be divided into minimum nights of more than 30 nights and less than 30 nights. 
+                            Comparing the different relationship between average housing price and the density of these two kinds Airbnb. </p>
+                    </div>
+                        
+                    <div id="over30" ></div>
+                    <div id="text">
+                        <p>    Over 30 nights: the minimum stay night is over 30 nights, which can provide survey for people who need to stay more than one month.
+                        </br>
+                           The r square is 0.2664, which means that the result of this regression can explain 26.6% of the observation. 
+                        </br>
+                           The estimate of this of this equation is 1545, which means the density of this kind of Airbnb is correlative with housing price.
+                                </p>
+                    </div>
+                    <div id="below30"></div>
+                    <div id="text">
+                        <p>    Less 30 nights: the minimum stay night is less 30 nights, which can provide more convenience for people who does not need to stay for long time, such as tourism. 
+                            </br>
+                               The R Square is 0.211, which means that the result of this regression can explain 21.1% of the observation. 
+                            </br>
+                               The estimate of this of this equation is 180, which means the density of this kind of Airbnb is correlative with housing price.
+                         </p>
+                    </div>
+                    <div id="typedensity"></div> 
+                    
+                    
+                    <div>
+                        <h4 id="title3">Geospatial Distribution</h4>
+                    </div>
+                    
+                    <div id="text">
+                        <div id="Kchart" style="width: 80%; height: 450px; background-color: #FFFFFF; align-self:center;" ></div>
+                        <p>Ripley’s K function is used for further exploration of the distribution characteristics. Figure 
+                            shows the distance on the horizontal axis and the value of the L function on the vertical axis. If the specific 
+                            distance L(d) is larger than the expected value (blue line), the clustering degree of the distribution is higher than 
+                            that of the random distribution of the distance (analysis scale). The observation value is larger than the upper limit 
+                            of the confidence interval, the spatial clustering of the distance has statistical significance. 
+                            The graph shows that the L(d) value is much greater than expected, which indicates that both Airbnb and Propertys are 
+                            clustered in the urban area and that there is no evidence of random or uniform distribution in this scale.</p>
+                    </div>
+                    <div id="text">
+                        <p>Standard deviational ellipse can understand the scattering range and direction of data. 
+                           This method is widely used in the study of virus transmission and air pollution diffusion.
+                           Figure shows that the main expansion axes (the longer axis of the eclipse) are concentrated in the direction 
+                           of Queens and Long Island, while the expansion of Bronx is not as pronounced.
+                        </p>
+                    </div>
+     <!-- Ellipse Analysis -->           
+                   <div class="ellipse">
+                        <div class="main">
+                            <svg id="drawing"></svg>
+                        </div>
+                        <div class="bottom">
+                            <select>
+                                <option value="1">New York City</option>
+                                <option value="2">Point One</option>
+                                <option value="3">Point Two</option>
+                                <option value="4">Point Three</option>
+                                <option value="5">Point Four</option>
+                                <option value="6">Point Five</option>
+                                <option value="7">Point Six</option>
+                            </select>
+                        </div>
+                        <div class="tip">
+                            <span class="cx"></span>
+                            <span class="cy"></span>
+                            <span class="r"></span>
+                            <span class="fill"></span>
+                            <span class="title"></span>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 id="title4">Limitations</h4>
+                    </div>
+                    <div id="text">              
+                        <p>
+                            - Ignore the data of other years: changes of Airbnb and housing price
+                        </br>
+                            -Rough model: other impacts and the natural fluctuations of houseing prices
+                            A small R-square: low model reliability
+                        </br>
+                            -Fragmentation analysis: less combination between Spatial and quantitative analysis
+                            Focusing on New York: unable to be applied to other cities
+                                
+                        </p>
+                    </div>
+            </div>
+
+                
+                              
+            <script  src="javascript/charts.js"></script>
+            <script  src="javascript/bell_chart.js"></script>
+            <script  src="javascript/backgroun_flow.js"></script>
+            <script  src="javascript/heat_map.js"></script>
+            <script  src="javascript/bubble.js"></script>
+            <script  src="javascript/regression.js"></script>
+            <script  src="javascript/ellipse.js"></script>
+            <script  src="javascript/svg.js"></script>
+            <script  src="javascript/type.js"></script>
+            <script  src="javascript/over30.js"></script>
+            <script  src="javascript/below30.js"></script>
+            <script  src="javascript/kchart.js"></script>
+        </div>
+    </body>
+</html>

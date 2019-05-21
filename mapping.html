@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title>Show polygon information on click</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <script src='https://cdn3.devexpress.com/jslib/18.2.8/js/dx.all.js'></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.2.0/mapbox-gl-geocoder.min.js'></script>
+    <script src='https://npmcdn.com/@turf/turf/turf.min.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.2.0/mapbox-gl-geocoder.css' rel='stylesheet' />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/data.js"></script>
+    <script src="https://code.highcharts.com/modules/drilldown.js"></script>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.7.0/introjs.css'>
+<!-- amCharts javascript sources -->
+<script type="text/javascript" src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+<script type="text/javascript" src="https://www.amcharts.com/lib/3/serial.js"></script>
+<script type="text/javascript" src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+
+<style>
+  ul li { width: 100%; }
+  ul li h2 { color: #1a2a3a; }
+</style>
+    <style>
+        body { margin:0; padding:0; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+.mask{ background-size: cover; width:100%; height:100%; opacity: 0.67; background-image:url("./img/11.jpg");position:fixed; z-index:998; top:0;}
+
+.warn{width: 20%;overflow: hidden;position: absolute;top:50%;left: 0;right: 0;margin:auto;border-radius: 8px;background-color: #fff;transform: translateY(-50%);-webkit-transform: translateY(-50%);z-index:999;}
+
+.warn .title{width: 100%;height: 50px;line-height: 57px;text-align: center;font-size: 18px;}
+
+.warn .content{margin: 0 auto;font-size: 14px;line-height: 20px;text-align: center;padding-left: 21px;padding-right: 21px;padding-bottom: 24px;}
+
+.warn .i_know{border-top: 1px solid #eee;width: 100%;height:46px;color: #4691ee;text-align: center;font-size: 16px;line-height: 46px;}
+
+    </style>
+</head>
+<body>
+<style>
+</style>
+
+<nav role="navigation">
+    <div id="menuToggle">
+      <input type="checkbox" />
+      <span></span>
+      <span></span>
+      <span></span>
+      <ul id="menu">
+            <a href="index.html"><li>Home</li></a>
+            <a href="mapping.html"><li>Mapping</li></a>
+            <a href="Background.html"><li>Background</li></a>
+            <a href="analysis.html"><li>Analysis</li></a>
+            <a href="about.html"><li>About</li></a>
+            <br>
+      </ul>
+    </div>
+</nav>
+
+<!-- Instruction Mask-->
+<div id='map' class="cont"></div>
+
+<div class="mask" id='mask'></div>
+<div class="warn" id='warn'>
+    <div class="title">For Map Reading</div>
+    <div class="content">Please Read the Instruction </div>
+    <div class="i_know" id='i_know'>Done !</div>
+</div>
+
+<!-- Console-->
+
+<div id="console"  class="cont">
+    <div class="card">
+      <h2>MAP LAYERS</h2>
+      <ul>
+        <li style="color:steelblue" id="borough_li">
+            <div class=".cont">
+              <h2 ><i class="material-icons">extension </i>Borough</h2>
+              <small>Infomation Summary</small>
+            </div>
+        </li>
+        <li style="color:steelblue" id="airbnb_li">
+            <div>
+              <h2><i class="material-icons">location_city </i> Airbnb</h2>
+              <small>Display the Airbnb Listed</small>
+            </div>
+        </li>
+        <li style="color:steelblue" id="housing_li">
+          <div>
+            <h2><i class="material-icons">home </i> Housing</h2>
+            <small>An Clustering Analysis DBSCAN</small>
+          </div>
+        </li>
+     
+      </ul>
+    </div>
+    
+    <div style="background-color: white ; border: 4px solid white; padding: 0cm;"></div>
+
+    <div class="card">
+      <h2>MAP LEGEND</h2>
+      <div  class="legend_row">
+        <span style="display: block;"> </span>
+      </div>
+      <div class="legend_row">
+        <span style="display: none;">
+          <div class="colors"></div>
+          <div style="overflow: hidden;">
+            <p class="label third">5ft</p>
+            <p class="label third">15ft</p>
+            <p class="label third">25ft</p>
+          </div>
+        </span>
+      </div>
+
+      <div id='legend_airbnb' style='display:block; margin-left:6px; display:none;'>
+          <small>Airbnb listed is clustered by color and size</small>
+        </br>
+        <ul>
+            <li style="color:6794a7;" id="borough_li">
+                <div>
+                  <samll><i class="material-icons" style="font-size:25px;">panorama_fish_eye</i> </samll>
+                  <small>Cluster 800</small>
+                </div>
+            </li>
+        </ul>
+
+        <ul>
+            <li style="color:6794a7;" id="borough_li">
+                <div>
+                  <samll><i class="material-icons" style="font-size:20px;">panorama_fish_eye </i> </samll>
+                  <small>Cluster over 500</small>
+                </div>
+            </li>
+        </ul>
+
+        <ul>
+            <li style="color:6794a7;" id="borough_li">
+                <div>
+                  <samll><i class="material-icons" style="font-size:15px;">panorama_fish_eye</i> </samll>
+                  <small>Cluster over 50</small>
+                </div>
+            </li>
+        </ul>
+
+        <nav class='legend clearfix'>
+          <span style='background:#76c0c1;'></span>
+          <span style='background:#76c0c1'></span>
+          <span style='background:#76c0c1;'></span>
+          <span style='background:#6794a7;'></span>
+          <span style='background:#6794a7;'></span>
+          <span style='background:#3E647D;'></span>
+          <span style='background:#3E647D;'></span>
+          <label><strong>Low</strong></label>
+          <label></label>
+          <label></label>
+          <label></label>
+          <label></label>
+          <label></label>
+          <label><strong>High</strong></label>
+      </div>
+
+      <div id='legend_borough' style='display:block; margin-left:6px; display:none;'>
+        <nav id="menu_sub"></nav>
+        <nav class='legend clearfix'>
+            <small>Default popup is based on Borough, Please Select nbhd_layer to show infomation by Neighbourhood</small>
+            <ul>
+                <li style="color:#00887d" id="borough_li">
+                    <div>
+                      <samll><i class="material-icons" style="font-size:35px;">stop </i> </samll>
+                      <small>Sales about 6,500</small>
+                    </div>
+                  </li>
+                <li style="color:#64b5f6" id="borough_li">
+                    <div>
+                      <samll><i class="material-icons" style="font-size:35px;">stop </i> </samll>
+                      <small>Sales about 8,000</small>
+                    </div>
+                </li>
+                
+                <li style="color:#BFA19C" id="borough_li">
+                  <div>
+                    <samll><i class="material-icons" style="font-size:35px;">stop </i> </samll>
+                    <small>Sales about 18,000</small>
+                  </div>
+              </li>
+                  <li style="color:#075485" id="borough_li">
+                    <div>
+                      <samll><i class="material-icons" style="font-size:35px;">stop </i> </samll>
+                      <small>Sales about 24,000</small>
+                    </div>
+                  </li>
+                  <li style="color:#595959" id="borough_li">
+                    <div>
+                      <samll><i class="material-icons" style="font-size:35px;">stop </i> </samll>
+                      <small>Sales about 26,000</small>
+                    </div>
+                  </li>
+            </ul>
+
+          <nav id="menu_sub"></nav></br>
+          
+      </div>
+
+      <div id='legend_housing' style='display:block; margin-left:6px; display:none;'>
+        <div>
+            <ul>
+                <li style="color:#76c0c1" id="borough_li">
+                    <div>
+                      <samll><i class="material-icons" style="font-size:14px;">brightness_1 </i> </samll>
+                      <small>Housing Property Sales</small>
+                    </div>
+                </li>
+                <li style="color:#1A476F; font-size: 20px" id="borough_li">
+                  <div>
+                    <samll><i class="material-icons" style="font-size:14px;">brightness_1 </i> </samll>
+                    <small>Airbnb DBSCAN Results</small>
+                  </div>
+              </li>
+            </ul>
+            <ul>
+              <li style="color:6794a7;" id="borough_li">
+                  <div>
+                    <samll><i class="material-icons" style="font-size:30px;">panorama_fish_eye</i> </samll>
+                    <small>Buffer Area</small>
+                  </div>
+              </li>
+          </ul>
+        
+            </div>
+        </div>
+      </br>
+      </br>
+        <nav class='legend clearfix'>
+          
+      </div>
+   </div>
+    
+    
+</div>
+<div class="dvs"></div>
+
+<div class="infocard">
+  <div id='bor_ma' style='display:none;'>
+    <strong>Housing</strong>
+    <div id="Airbnb_info_chart" style="min-width: 400px; height: 300px; margin: 0 auto"></div>
+  </div>
+</div>
+
+<div class="infocard">
+  <div id='airbnb_ma' style='display:none;'>
+    <strong>Airbnb</strong>
+    <div id="airbnbnum" style="width: 100%; height: 400px; " ></div>
+    <div id="container" style="min-width: 400px; height: 300px; margin: 0 auto"></div>
+      
+    </div>
+  </div>
+</div>
+
+<div class="infocard">
+  <div id='buffer_ma' style='display:none;'>
+    <p>The map aims to analysis the spatial distribution of </br> </br>the housing and Airbnb.
+      The CLustering results is conducted </br></br>by Density Bases Clustering. This result is futher used 
+      in </br></br>Standard Error Ellipse Analysis. Detials are in Analysis part.</br>
+    </p>
+  </div>
+</div>
+
+
+
+
+
+<script src="./javascript/menu.js"> </script>
+<script src="./javascript/map.js"> </script>
+<script src="./javascript/infochart.js"></script>
+<script type="text/javascript" src="./javascript/airbnbnum.js"> </script>
+<script src='./javascript/dots.js'></script>
+<script src='./javascript/buffer.js'></script>
+<script  src="./javascript/intro.js"></script>
+
+<script>
+
+//  上面的 CSS 代码写的有无用的部分，先是 display: block; 然后又 display: none; 后面的会把前面的替换掉，所以前面的 display: block; 是多余的
+// 上面三个部分，代码基本上一样，有重复性，可以把 CSS 拿出来写，省去重复的一样的 style="..." 代码  就是写在 .css 文件里面 或者 style 节点里面就可以
+    
+var toggleableLayerIds = [ 'borough_layer', 'nbhd_layer' ];
+
+for (var i = 0; i < toggleableLayerIds.length; i++) {
+    var id = toggleableLayerIds[i];
+
+    var link = document.createElement('a');
+    link.href = '#';
+    link.className = 'active';
+    link.textContent = id;
+
+    link.onclick = function (e) {
+        var clickedLayer = this.textContent;
+        e.preventDefault();
+        e.stopPropagation();
+
+        var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
+
+        if (visibility === 'visible') {
+            map.setLayoutProperty(clickedLayer, 'visibility', 'none');
+            this.className = '';
+        } else {
+            this.className = 'active';
+            map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
+        }
+    };
+
+    var layers = document.getElementById('menu_sub');
+    layers.appendChild(link);
+}
+
+
+
+</script>
+<script>
+
+/// Instruction
+
+var mask_know = document.getElementById('i_know');
+    var mask_info = document.getElementById('mask');
+    var mask_warn = document.getElementById('warn');
+
+    mask_know.addEventListener('click', function () {
+        mask_info.style.display = 'none';
+        mask_warn.style.display = 'none';
+      });
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.7.0/intro.min.js'></script>
+
+
+</body>
+</html>
