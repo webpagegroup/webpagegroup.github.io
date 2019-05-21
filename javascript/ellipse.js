@@ -8,7 +8,7 @@ document.querySelector('.ellipse .bottom select').addEventListener('change', fun
 window.addEventListener('load', function () {
 
 	var main = document.querySelector('.ellipse .main');
-	main.style.backgroundImage = 'url(1.png)';
+	main.style.backgroundImage = 'url(./img/1.png)';
 
 	var width = 800;
 	var height = 550;
@@ -68,7 +68,7 @@ function updateChart () {
 //// Point Five
 	for (var i = 0, len = datas.length;i < len;i ++) {
 		var data = datas[i];
-		draw.circle(25)
+		draw.circle(20)
 			.attr('cx', 210)
 			.attr('cy', 330)
 			.attr('fill', '#ebebeb')
@@ -91,7 +91,7 @@ function updateChart () {
 
 	for (var i = 0, len = datas.length;i < len;i ++) {
 		var data = datas[i];
-		draw.circle(25)
+		draw.circle(15)
 			.attr('cx', 170)
 			.attr('cy', 230)
 			.attr('fill', '#00887d')
@@ -115,7 +115,7 @@ function updateChart () {
 //// Point Four
 for (var i = 0, len = datas.length;i < len;i ++) {
 		var data = datas[i];
-		draw.circle(30)
+		draw.circle(40)
 			.attr('cx', 110)
 			.attr('cy', 160)
 			.attr('fill', '#014d64')
@@ -138,8 +138,8 @@ for (var i = 0, len = datas.length;i < len;i ++) {
 
 	for (var i = 0, len = datas.length;i < len;i ++) {
 		var data = datas[i];
-		draw.circle(30)
-			.attr('cx', 0)
+		draw.circle(10)
+			.attr('cx', 5)
 			.attr('cy', 410)
 			.attr('fill', '#76c0c1')
 			.attr('info', 'Borough: Staten Island')
@@ -163,7 +163,7 @@ for (var i = 0, len = datas.length;i < len;i ++) {
 
 for (var i = 0, len = datas.length;i < len;i ++) {
 		var data = datas[i];
-		draw.circle(30)
+		draw.circle(20)
 			.attr('cx', 190)
 			.attr('cy', 80)
 			.attr('fill', '#7ad2f6')

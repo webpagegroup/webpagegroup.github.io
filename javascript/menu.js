@@ -16,6 +16,7 @@
       var legend_airbnb = document.getElementById('legend_airbnb');
       var legend_borough = document.getElementById('legend_borough');
       var legend_housing = document.getElementById('legend_housing');
+      var info_bor = document.getElementById('menu_sub');
     
       var borough_h2 = borough_li.getElementsByTagName('h2')[0];
       var airbnb_h2 = airbnb_li.getElementsByTagName('h2')[0];
@@ -33,6 +34,7 @@
         borough_info.style.display = 'block'
         buffer_info.style.display = 'none';
         airbnb_info.style.display = 'none';
+        info_bor.style.display = 'block';
         // map layer
         ////// Airbnb Clustering
         map.setLayoutProperty("cluster-count", 'visibility', 'none');
@@ -59,6 +61,7 @@
         borough_info.style.display = 'none';
         airbnb_info.style.display = 'block';
         buffer_info.style.display = 'none';
+        info_bor.style.display = 'none';
         /// map layer
         /// Borough nbhd
         map.setLayoutProperty('borough_layer', 'visibility', 'none');
@@ -86,6 +89,7 @@
         borough_info.style.display = 'none';
         airbnb_info.style.display = 'none';
         buffer_info.style.display = 'block';
+        info_bor.style.display = 'none';
 /// map
         /// Borough nbhd
         map.setLayoutProperty('borough_layer', 'visibility', 'none');
