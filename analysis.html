@@ -76,13 +76,13 @@
                     <a href="#title3">Part II: Geospatial Distribution</a>
                     <a href="#title5"><i>Ripley'K Analysis</i></a>
                     <a href="#title3"><i>Standard Deviation Ellipse</i></a>
-                    <a href="#title4">Limitations</a>
+                    <a href="#title4">Part III: Limitations</a>
                 </div>
                 <div>
                     <h4 id="title1">Analyisi and Visualization</h4>
                 
                     <div id="text">
-                            <p>This section will provide an overview of the analysis. The project <a href="">report</a> and <a href="">code</a> can be downloaded from the Github <a href="">Github repository</a>.
+                            <p>This section will provide an overview of the analysis. The project report code can be downloaded from the Github <a href="https://github.com/webpagegroup/webpagegroup.github.io">Github repository</a>.
                             The data analysis is regarded as the most important part of our project, including two parts, quantitative analysis and geospatial analysis.</p>
                         <div id="heat_map" style="height: 400px; min-width: 310px; max-width: 800px; margin: 0 auto"></div>
       
@@ -92,42 +92,43 @@
                     
                     <div id="text">
                         
-                        <h3 id="title2">Quantative Economy</h3>
-                        <p>The quantitative analysis main focuses on the effect of Airbnb density on average housing price on neighbourhood level.
+                        <h3 id="title2">Part I: Quantative Economy</h3>
+                        <p>The quantitative analysis mainly focuses on the effect of Airbnb density on average housing price on neighbourhood level.
                             We divide Airbnb into different types based on several obvious features, to conduct a more accurate analysis. 
-                            As two obvious attributions of Airbnb, minimum stay night and the type of Airbnb are chosen to further refine the analysis.
+                            As two obvious attributes of Airbnb, minimum stay night and the type of Airbnb are chosen to further refine the analysis.
                              Airbnb with different minimum stay night represents different target tenement, which would be introduced first.</p>
                         </br>
 
                         <p id="title5"><i>Minimum Stay Nights</i></p>
-                        <p> The rent of Airbnb can be divided in to short-term and long-term rent.
+                        <p> The rent of Airbnb can be divided into short-term and long-term rent.
                             Airbnb already has a landing page dedicated to long-term rentals and sublets that over 28 days to six months. 
-                            This part gives the relationship between average housing price and the density of two types Airbnb. </p> 
+                            This part gives the relationship between average housing price and the density of two types of Airbnb. </p> 
                         <div id="minnights" style="width: 100%; height: 400px; background-color: #FFFFFF;" ></div>
                          
-                        <p>Based on requirement of stay nights, Airbnb could be divided into minimum nights of more than 28 nights and less than it. 
+                        <p>Based on requirement of stayed nights, Airbnb could be divided into minimum nights of more than 28 nights and less than it. 
                             Comparing the different relationship between average housing price and the density of these two kinds Airbnb. </p>
                     </div>
                         
                     <div id="over30" ></div>
                     <div id="text">
                         <p>Over 28 minimum nights Airbnb:</p>
-                        <p> This kind of Airbnb require over 28 minimum stay nights, which can provide service for long-term stay people.
-                        </br>
+                        <p> This kind of Airbnb requires over 28 minimum stayed nights, which can provide service for long-term stayed people.
+                        </br></br>
                           	The R-Square means that the result of this regression can explain about 26.6% of the observation. 
-                        </br>
-                          	The estimate of this of this equation shows that the density of this kind of Airbnb is positive correlated with housing price, and it can affect housing price efficiency.
-                                </p>
+                        </br></br>
+                          	The estimate of this equation shows that the density of this kind of Airbnb is positive correlated with housing price, and it can affect housing price efficiently.
+                        </p>
                     </div>
+                    </br>
                     <div id="below30"></div>
                     <div id="text">
                         <p>Less 28 minimum nights Airbnb:</p>
-                        <p>  This kind of Airbnb require less 28 minimum stay nights, which can provide service for short-term stay people, such as tourism. 
-                            </br>
+                        <p>  This kind of Airbnb requires less 28 minimum stayed nights, which can provide services for short-term stayed people, such as tourism. 
+                            </br></br>
                              The R-Square means that the result of this regression can explain 21.1% of the observation. 
-                            </br>
-                             The slope of this equation is lower than that of another type of Airbnb, which means that this part of Airbnb can not affect housing price as efficient as another part.
-                         </p>
+                            </br></br>
+                             The slope of this equation is lower than that of the other type of Airbnb, which means that this part of Airbnb can not affect housing price as efficient as the other one.
+                        </p>
                      
                     </div>
  <!-- Type of Airbnb  Analysis -->  
@@ -146,13 +147,13 @@
                 </br>
  <!-- Geospatially  Analysis -->                    
                     <div>
-                        <h4 id="title3">Geospatial Distribution</h4>
+                        <h4 id="title3">Part II: Geospatial Distribution</h4>
                     </div>
                     
                     <div id="text">
                         <p id="title5"><i>Ripley’s K</i></p>
                         <div id="Kchart" style="width: 80%; height: 450px; background-color: #FFFFFF; margin: 0 auto" ></div>
-                        <p>Ripley’s K function is used for further exploration of the distribution characteristics. Figure 
+                        <p>Ripley’s K function is used for further exploration of the distribution characteristics.(See detials in Report) Figure 
                             shows the distance on the horizontal axis and the value of the L function on the vertical axis. If the specific 
                             distance L(d) is larger than the expected value (blue line), the clustering degree of the distribution is higher than 
                             that of the random distribution of the distance (analysis scale). The observation value is larger than the upper limit 
@@ -160,8 +161,9 @@
                             The graph shows that the L(d) value is much greater than expected, which indicates that both Airbnb and Propertys are 
                             clustered in the urban area and that there is no evidence of random or uniform distribution in this scale.</p>
                     </div>
-                    <p id="title6"><i>Standard Deviation Ellipse</i></p>
+                    
                     <div id="text">
+                        <p id="title6" style="margin: 0% 0%;"><i>Standard Deviation Ellipse</i></p>
                         <p>Standard deviational ellipse can understand the scattering range and direction of data. 
                            This method is widely used in the study of virus transmission and air pollution diffusion.
                            Figure shows that the main expansion axes (the longer axis of the eclipse) are concentrated in the direction 
@@ -194,7 +196,7 @@
                     </div>
                 </br>
                     <div>
-                        <h4 id="title4">Limitations</h4>
+                        <h4 id="title4">Part III: Limitations</h4>
                     </div>
                     <div id="text">              
                         <p>

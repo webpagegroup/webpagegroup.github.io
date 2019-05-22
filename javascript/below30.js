@@ -7,7 +7,7 @@ Highcharts.chart('below30', {
     min: 0
   },
   title: {
-    text: 'average housing price & less 30 night Regression'
+    text: 'Average Housing Price & Below 28 Nights Stays Regression'
   },
   series: [{
     type: 'line',

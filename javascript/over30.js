@@ -7,7 +7,7 @@ Highcharts.chart('over30', {
     min: 0
   },
   title: {
-    text: 'Scatter plot with regression line'
+    text: 'Average Housing Price & Over 28 Nights Stays Regression'
   },
   series: [{
     type: 'line',
