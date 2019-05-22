@@ -38,7 +38,7 @@ Highcharts.chart('heat_map', {
 
   tooltip: {
     formatter: function () {
-      return '<b>' + this.series.xAxis.categories[this.point.x] + '</b> sold <br><b>' +
+      return '<b>' + this.series.xAxis.categories[this.point.x] + '</b> <br><b>' +
         this.point.value + '</b> items on <br><b>' + this.series.yAxis.categories[this.point.y] + '</b>';
     }
   },
@@ -46,7 +46,9 @@ Highcharts.chart('heat_map', {
   series: [{
     name: 'Sales per employee',
     borderWidth: 1,
-    data: [[0, 0, 1], [0, 1, 0.29], [0, 2, 0.17], [0, 3, 0.24], [0, 4, 0.67], [1, 0, 0.29], [1, 1, 1], [1, 2, 0.15], [1, 3, 0.17], [1, 4, 0.48], [2, 0, 0.13], [2, 1, 0.15], [2, 2, 1], [2, 3, 0.32], [2, 4, 0.52], [3, 0, 0.24], [3, 1, 0.32], [3, 2, 0.14], [3, 3, 1], [3, 4, 0.13], [4, 0, 0.38], [4, 1, 0.49], [4, 2, 0.17], [4, 3, 0.17], [4, 4, 1] ],
+    data: [[0, 0, 1], [0, 1, 0.11], [0, 2, 0.25], [0, 3, 0.24], [0, 4, 0.56], [1, 0, 0.11], [1, 1, 1], [1, 2, 0.37], [1, 3, 0.39], [1, 4, 0.49],
+     [2, 0, 0.13], [2, 1, 0.37], [2, 2, 1], [2, 3, 0.23], [2, 4, 0.52], [3, 0, 0.24], [3, 1, 0.39], [3, 2, 0.23], [3, 3, 1], [3, 4, 0.13], [4, 0, 0.56], 
+    [4, 1, 0.49], [4, 2, 0.52], [4, 3, 0.13], [4, 4, 1] ],
     dataLabels: {
       enabled: true,
       color: '#000000'
