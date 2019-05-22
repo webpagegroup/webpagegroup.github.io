@@ -26,9 +26,12 @@
         <script src="https://code.highcharts.com/modules/heatmap.js"></script> 
 		<script type="text/javascript" src="https://www.amcharts.com/lib/3/amcharts.js"></script>
 		<script type="text/javascript" src="https://www.amcharts.com/lib/3/serial.js"></script> 
-        
+        	<!-- amCharts javascript sources -->
+		<script type="text/javascript" src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+		<script type="text/javascript" src="https://www.amcharts.com/lib/3/pie.js"></script>
+		<script type="text/javascript" src="https://www.amcharts.com/lib/3/themes/light.js"></script>
         <style>
-           #chartdiv {
+           #roomtype {
           width: 100%;
           height: 350px;
         }
@@ -67,16 +70,20 @@
                 <div class="side-navs" style="opacity: 0.5;">
                     </br></br>
                     <a<strong>Outline</strong></a>
-                    <a href="#title1">Analyisi and Visualization</a>
-                    <a href="#title2">Quantative Economy</a>
-                    <a href="#title3">Geospatial Distribution</a>
+                    <a href="#title2">Part I: Quantative Economy</a>
+                    <a href="#title5"><i>Analyisi and Visualization</i></a>
+                    <a href="#title6"><i>Analyisi and Visualization</i></a>
+                    <a href="#title3">Part II: Geospatial Distribution</a>
+                    <a href="#title5"><i>Ripley'K Analysis</i></a>
+                    <a href="#title3"><i>Standard Deviation Ellipse</i></a>
                     <a href="#title4">Limitations</a>
                 </div>
                 <div>
                     <h4 id="title1">Analyisi and Visualization</h4>
-                </br>
+                
                     <div id="text">
-                        <p></p>
+                            <p>This section will provide an overview of the analysis. The project <a href="">report</a> and <a href="">code</a> can be downloaded from the Github <a href="">Github repository</a>.
+                            The data analysis is regarded as the most important part of our project, including two parts, quantitative analysis and geospatial analysis.</p>
                         <div id="heat_map" style="height: 400px; min-width: 310px; max-width: 800px; margin: 0 auto"></div>
       
                         <p>Correlation Conclusion</p>
@@ -84,39 +91,66 @@
                 </br>
                     
                     <div id="text">
-                        <h3 id="title2">Quantative Economy</h3>
-                        <p>This section will provide an overview of the analysis. The project <a href="">report</a> and <a href="">code</a> can be downloaded from the Github <a href="">Github repository</a>.</p>
                         
-                        <p>Based on requirement of stay nights, Airbnb could be divided into minimum nights of more than 30 nights and less than 30 nights. 
+                        <h3 id="title2">Quantative Economy</h3>
+                        <p>The quantitative analysis main focuses on the effect of Airbnb density on average housing price on neighbourhood level.
+                            We divide Airbnb into different types based on several obvious features, to conduct a more accurate analysis. 
+                            As two obvious attributions of Airbnb, minimum stay night and the type of Airbnb are chosen to further refine the analysis.
+                             Airbnb with different minimum stay night represents different target tenement, which would be introduced first.</p>
+                        </br>
+
+                        <p id="title5"><i>Minimum Stay Nights</i></p>
+                        <p> The rent of Airbnb can be divided in to short-term and long-term rent.
+                            Airbnb already has a landing page dedicated to long-term rentals and sublets that over 28 days to six months. 
+                            This part gives the relationship between average housing price and the density of two types Airbnb. </p> 
+                        <div id="minnights" style="width: 100%; height: 400px; background-color: #FFFFFF;" ></div>
+                         
+                        <p>Based on requirement of stay nights, Airbnb could be divided into minimum nights of more than 28 nights and less than it. 
                             Comparing the different relationship between average housing price and the density of these two kinds Airbnb. </p>
                     </div>
                         
                     <div id="over30" ></div>
                     <div id="text">
-                        <p>    Over 30 nights: the minimum stay night is over 30 nights, which can provide survey for people who need to stay more than one month.
+                        <p>Over 28 minimum nights Airbnb:</p>
+                        <p> This kind of Airbnb require over 28 minimum stay nights, which can provide service for long-term stay people.
                         </br>
-                           The r square is 0.2664, which means that the result of this regression can explain 26.6% of the observation. 
+                          	The R-Square means that the result of this regression can explain about 26.6% of the observation. 
                         </br>
-                           The estimate of this of this equation is 1545, which means the density of this kind of Airbnb is correlative with housing price.
+                          	The estimate of this of this equation shows that the density of this kind of Airbnb is positive correlated with housing price, and it can affect housing price efficiency.
                                 </p>
                     </div>
                     <div id="below30"></div>
                     <div id="text">
-                        <p>    Less 30 nights: the minimum stay night is less 30 nights, which can provide more convenience for people who does not need to stay for long time, such as tourism. 
+                        <p>Less 28 minimum nights Airbnb:</p>
+                        <p>  This kind of Airbnb require less 28 minimum stay nights, which can provide service for short-term stay people, such as tourism. 
                             </br>
-                               The R Square is 0.211, which means that the result of this regression can explain 21.1% of the observation. 
+                             The R-Square means that the result of this regression can explain 21.1% of the observation. 
                             </br>
-                               The estimate of this of this equation is 180, which means the density of this kind of Airbnb is correlative with housing price.
+                             The slope of this equation is lower than that of another type of Airbnb, which means that this part of Airbnb can not affect housing price as efficient as another part.
                          </p>
+                     
                     </div>
-                    <div id="typedensity"></div> 
-                    
-                    
+ <!-- Type of Airbnb  Analysis -->  
+                    </br>
+                    <div id="text">
+                        <p id="title6"> <i> Type of Airbnb</i>  </p>
+                        <p>Since their regression graphs are similar and cannot directly show what they mean directly, so we have omitted them here.
+                            </p>
+                        <div id="airbnbtype" style="width: 100%; height: 400px; background-color: #FFFFFF;" ></div>
+                        <p> The shared room, as the cheapest and most rare one among these three types, the guests should share an entire house with other people or homeowner. The chart shows the R-squares and the K of all three types. As figure shows, the shared room has a low R-square, which even may not informative. However, it has a very high K. Therefore, the shared room has little impact on housing price, but once it works, it would make a huge effect.</p>  
+                        <p>Secondly, the private part would give the guests their own bedrooms, while other space is shared. The private part has a relatively stable data, shows that about 19.5% of observations match the equation.
+                            </p>  
+                        <p>Entire place is the most popular type, accounting for 52.39% of Airbnb in New York. Meanwhile, it has a high R-square, which means it is actually more corelative with housing price. It is obvious that the type of entire place Airbnb has a more stable and stronger relationship with housing price.</p>
+                    </div>
+                     <!-- <div id="typedensity"></div> -->  
+                </br>
+ <!-- Geospatially  Analysis -->                    
                     <div>
                         <h4 id="title3">Geospatial Distribution</h4>
                     </div>
                     
                     <div id="text">
+                        <p id="title5"><i>Ripley’s K</i></p>
                         <div id="Kchart" style="width: 80%; height: 450px; background-color: #FFFFFF; margin: 0 auto" ></div>
                         <p>Ripley’s K function is used for further exploration of the distribution characteristics. Figure 
                             shows the distance on the horizontal axis and the value of the L function on the vertical axis. If the specific 
@@ -126,6 +160,7 @@
                             The graph shows that the L(d) value is much greater than expected, which indicates that both Airbnb and Propertys are 
                             clustered in the urban area and that there is no evidence of random or uniform distribution in this scale.</p>
                     </div>
+                    <p id="title6"><i>Standard Deviation Ellipse</i></p>
                     <div id="text">
                         <p>Standard deviational ellipse can understand the scattering range and direction of data. 
                            This method is widely used in the study of virus transmission and air pollution diffusion.
@@ -157,19 +192,21 @@
                             <span class="title"></span>
                         </div>
                     </div>
+                </br>
                     <div>
                         <h4 id="title4">Limitations</h4>
                     </div>
                     <div id="text">              
                         <p>
-                            - Ignore the data of other years: changes of Airbnb and housing price
-                        </br>
-                            -Rough model: other impacts and the natural fluctuations of houseing prices
-                            A small R-square: low model reliability
-                        </br>
-                            -Fragmentation analysis: less combination between Spatial and quantitative analysis
-                            Focusing on New York: unable to be applied to other cities
-                                
+                        	We only do a horizontal relationship between Airbnb and housing prices without considering their relationship in the vertical level.
+                        </br></br>
+                        	We tacitly think that all the observations in linear regressions that do not match the equation are not affecting the house price or have less impact, but in fact it may not be.
+                         </br></br>
+                        	The R-squares in our regressions are relatively small, lack of reliability.
+                         </br></br>
+                        	For geographic analysis, we just predict the plan and development of Airbnb and housing on a geographical level, without carefully thinking about constraints resulting from the planning and policy of New York City.
+                        </br></br>
+                        	Our analysis is fragmentary, unable to combine Spatial and quantitative analysis       
                         </p>
                     </div>
             </div>
@@ -188,6 +225,8 @@
             <script  src="javascript/over30.js"></script>
             <script  src="javascript/below30.js"></script>
             <script  src="javascript/kchart.js"></script>
+            <script  src="javascript/minnights.js"></script>
+            <script  src="javascript/airbnbtype.js"></script>
         </div>
     </body>
 </html>

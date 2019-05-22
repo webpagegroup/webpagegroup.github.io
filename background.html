@@ -29,6 +29,8 @@
 		<script type="text/javascript" src="https://www.amcharts.com/lib/3/serial.js"></script>
     <script type="text/javascript" src="./javascript/all_airbnb.js"></script> -->
     <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script type="text/javascript" src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+		<script type="text/javascript" src="https://www.amcharts.com/lib/3/serial.js"></script>
         
         
     </head>
@@ -63,10 +65,14 @@
             <div class="side-navs" style="opacity: 0.5;">
             </br></br>
                 <a<strong>Outline</strong></a>
-                <a href="#title1">How it works</a>
-                <a href="#title2">The development performance</a>
-                <a href="#title3">Homeowner occupancy and vacancy</a>
-                <a href="#title4">ousing affordability index</a>
+                <a href="#title0"> Part I: Airbnb In NYC</a>
+                <a href="#title1"><i>How it works</i></a>
+                <a href="#title2"><i>The development performance</i></a>
+                
+                <a href="#title5">Part II: NYC Housing Market</a>
+                <a href="#title3"><i>Occupancy and Vacancy</i></a>
+                <a href="#title4"><i>Housing affordability index</i></a>
+                <a href="#title6">Part III: Current Debate</a>
             </div>
             <br>
             
@@ -77,15 +83,9 @@
              <p>The part gives the Economy behind Airbnb. Roughly take 3 minutes to Read. </p>
       
              <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-            </br>
-            <div style="height: 400px; min-width: 310px; max-width: 800px; margin: 0 auto">
-              <div id="chartContainer1" style="width: 45%; height: 300px;display: inline-block;"></div> 
-              <div id="chartContainer2" style="width: 45%; height: 300px;display: inline-block;"></div><br/>
-              <div id="chartContainer3" style="width: 45%; height: 300px;display: inline-block;"></div>
-              <div id="chartContainer4" style="width: 45%; height: 300px;display: inline-block;"></div>
-            </div> 
-            </br></br></br></br></br></br></br></br></br></br>
-            <h3>Part I: The development of Airbnb and its performance in New York City</h3>    
+        
+           
+            <h3 id="title0">Part I: The development of Airbnb and its performance in New York City</h3>    
             <h4 id="title1" style="margin: 0% 0%;">How it works: </h4>
             <p><i>Key Facts</i></p>
             <p>
@@ -117,6 +117,14 @@
                - Airbnb has put forward the plan for IPO in the coming 2019. (Bach,2018)
             </p>
             </br>
+          </br>
+          <div style="height: 400px; min-width: 310px; max-width: 800px; margin: 0 auto">
+            <div id="chartContainer1" style="width: 45%; height: 300px;display: inline-block;"></div> 
+            <div id="chartContainer2" style="width: 45%; height: 300px;display: inline-block;"></div><br/>
+            <div id="chartContainer3" style="width: 45%; height: 300px;display: inline-block;"></div>
+            <div id="chartContainer4" style="width: 45%; height: 300px;display: inline-block;"></div>
+          </div>
+        </br></br></br></br></br></br></br></br></br></br>
             <p><i>In New York City context:</i></p>    
             <p>- Remarkable annual growth of the numbers of Airbnb accommodation in New York City.
             </br>
@@ -126,7 +134,7 @@
                     
             </p>
             </br> 
-            <h3>Part II: How About Housing</h3> 
+            <h3 id="title5" >Part II: Housing Market Context In NYC</h3> 
             <p>New York City is facing inability to meet the demand of local affordability housing provision, 
                which results from the reduction of purchase power caused by limited income and growing housing price in the market. In relation to Airbnb, 
                 it has been discovered that in 2014 there have already been more than 4,600 Airbnb units in New York City being booked for over three months in a year, leading to discussion 
@@ -142,12 +150,13 @@
                  <div id="typepie" style="width: 100%; height: 400px; background-color: #FFFFFF;" ></div>
                 </br>
             <h4 id="title4" style="margin: 0% 0%;">Housing affordability index:</h4>    
+           </br>
             <p>New York City displays the second highest homeownership burden in the country, with over 54% of median annual household income allocated towards housing costs. Despite high income, 
                 New Yorkers were faced with very high housing costs as well as property taxes.</p>
-            
-                <p align="center"><img src="./img/background_2.png" width="350"   alt="b_2" /></p>
-            
-            <h3>Part III: Debate</h3>
+            </br>
+                <div id="ming" style="width: 100%; height: 400px; background-color: #FFFFFF;" ></div>
+            </br></br>
+            <h3 id="title6">Part III: Debate</h3>
             <p>For a highly constrained and regulated housing market in New York City, will the growing 
                 Airbnb development further threaten the housing market stability? </p>
             <p><i>It is a threat:</i></br>
@@ -172,6 +181,7 @@
             <script  src="javascript/chartdiv.js" ></script>
             <script  src="javascript/ideamap.js" ></script>
             <script  src="javascript/multicharts.js" ></script>
+            <script  src="javascript/ming.js" ></script>
             <!-- Resources -->
             <script src="https://www.amcharts.com/lib/4/core.js"></script>
             <script src="https://www.amcharts.com/lib/4/charts.js"></script>
