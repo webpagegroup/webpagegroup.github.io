@@ -2142,8 +2142,11 @@ map.on('mousemove', function(e) {
   var feature = features[0];
 
   popup.setLngLat(feature.geometry.coordinates)
-  .setHTML(feature.properties.Name)
+  .setHTML(  "<h5 style='color:steelblue'>"+feature.properties.Name +
+  '</br>'+ '<h6>Address: '+feature.properties.Address+' </br>'+" </h6>")
   .addTo(map);
+
+
 
   map.getCanvas().style.cursor = features.length ? 'pointer' : '';
 

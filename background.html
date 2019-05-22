@@ -15,19 +15,20 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
         <link rel="stylesheet" href="css/colorful.css">
         <link rel="stylesheet" href="css/charts.css">
-<!--Highchart
+
         <script src="https://code.highcharts.com/maps/highmaps.js"></script>
         <script src="https://code.highcharts.com/modules/tilemap.js"></script>
         <script src="https://code.highcharts.com/modules/exporting.js"></script>
         <script src="https://code.highcharts.com/modules/offline-exporting.js"></script>    
-<!--Amchart-->
+
         <script type="text/javascript" src="https://www.amcharts.com/lib/3/amcharts.js"></script>
-		<script type="text/javascript" src="https://www.amcharts.com/lib/3/pie.js"></script>
+		    <script type="text/javascript" src="https://www.amcharts.com/lib/3/pie.js"></script>
         <script type="text/javascript" src="https://www.amcharts.com/lib/3/themes/light.js"></script>
         <!-- amCharts javascript sources -->
 		<script type="text/javascript" src="https://www.amcharts.com/lib/3/amcharts.js"></script>
 		<script type="text/javascript" src="https://www.amcharts.com/lib/3/serial.js"></script>
-		<script type="text/javascript" src="./javascript/all_airbnb.js"></script> -->
+    <script type="text/javascript" src="./javascript/all_airbnb.js"></script> -->
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
         
         
     </head>
@@ -74,7 +75,16 @@
             <h3>Explore Timeline</h3>    
             <div id="chartdiv"></div>
              <p>The part gives the Economy behind Airbnb. Roughly take 3 minutes to Read. </p>
-             <div id="allairbnb" style="width: 100%; height: 400px; background-color: #FFFFFF;" ></div>
+      
+             <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+            </br>
+            <div style="height: 400px; min-width: 310px; max-width: 800px; margin: 0 auto">
+              <div id="chartContainer1" style="width: 45%; height: 300px;display: inline-block;"></div> 
+              <div id="chartContainer2" style="width: 45%; height: 300px;display: inline-block;"></div><br/>
+              <div id="chartContainer3" style="width: 45%; height: 300px;display: inline-block;"></div>
+              <div id="chartContainer4" style="width: 45%; height: 300px;display: inline-block;"></div>
+            </div> 
+            </br></br></br></br></br></br></br></br></br></br>
             <h3>Part I: The development of Airbnb and its performance in New York City</h3>    
             <h4 id="title1" style="margin: 0% 0%;">How it works: </h4>
             <p><i>Key Facts</i></p>
@@ -135,7 +145,7 @@
             <p>New York City displays the second highest homeownership burden in the country, with over 54% of median annual household income allocated towards housing costs. Despite high income, 
                 New Yorkers were faced with very high housing costs as well as property taxes.</p>
             
-                <p align="center"><img src="./img/background_2.png" width="250"   alt="b_2" /></p>
+                <p align="center"><img src="./img/background_2.png" width="350"   alt="b_2" /></p>
             
             <h3>Part III: Debate</h3>
             <p>For a highly constrained and regulated housing market in New York City, will the growing 
@@ -161,10 +171,11 @@
             <script  src="javascript/backgroun_flow.js" ></script>
             <script  src="javascript/chartdiv.js" ></script>
             <script  src="javascript/ideamap.js" ></script>
+            <script  src="javascript/multicharts.js" ></script>
             <!-- Resources -->
-<script src="https://www.amcharts.com/lib/4/core.js"></script>
-<script src="https://www.amcharts.com/lib/4/charts.js"></script>
-<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+            <script src="https://www.amcharts.com/lib/4/core.js"></script>
+            <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+            <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
             <script>
                 am4core.ready(function() {
                 

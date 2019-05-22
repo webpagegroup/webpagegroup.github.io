@@ -28,8 +28,8 @@
     <style>
         body { margin:0; padding:0; }
         #map { position:absolute; top:0; bottom:0; width:100%; }
-.mask{ background-size: cover; width:100%; height:100%; opacity: 0.67; background-image:url("./img/11.jpg");position:fixed; z-index:998; top:0;}
-
+.mask{ background-size: cover; width:100%; height:100%; opacity: 1; background-image:url("./img/11.png");position:fixed; z-index:998; top:0;}
+.mask_1 { background-size: cover; width:100%; height:100%; opacity: 0.5; background-image:url("./img/11_1.jpg");position:fixed; z-index:998; top:0;}
 .warn{width: 20%;overflow: hidden;position: absolute;top:50%;left: 0;right: 0;margin:auto;border-radius: 8px;background-color: #fff;transform: translateY(-50%);-webkit-transform: translateY(-50%);z-index:999;}
 
 .warn .title{width: 100%;height: 50px;line-height: 57px;text-align: center;font-size: 18px;}
@@ -64,7 +64,10 @@
 <!-- Instruction Mask-->
 <div id='map' class="cont"></div>
 
-<div class="mask" id='mask'></div>
+<div class="mask" id='mask'>
+  <div class="mask_1" id='mask_1'></div>
+</div>
+
 <div class="warn" id='warn'>
     <div class="title">For Map Reading</div>
     <div class="content">Please Read the Instruction </div>
