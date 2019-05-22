@@ -1,0 +1,134 @@
+ntaname_1,average,densityairbnb
+Astoria,513.9788562,0.0559
+Auburndale,466.1753047,0.0029
+"Baisley Park",265.0206687,0.0227
+"Battery Park City-Lower Manhattan",1037.7537750,0.0368
+"Bay Ridge",553.0352055,0.0134
+Bedford,509.5023902,0.0521
+"Bedford Park-Fordham North",186.2124488,0.0067
+Belmont,216.8438843,0.0295
+"Bensonhurst East",452.5137370,0.0140
+"Bensonhurst West",404.7056128,0.0107
+"Borough Park",545.9940521,0.0167
+"Briarwood-Jamaica Hills",478.4278727,0.0068
+"Brighton Beach",457.3079693,0.0407
+Brownsville,192.6543501,0.0031
+"Bushwick North",391.9992849,0.1805
+"Bushwick South",406.0779990,0.0772
+"Carroll Gardens-Columbia Street-Red Hook",739.6162861,0.0067
+"Central Harlem North-Polo Grounds",500.6059590,0.0590
+"Central Harlem South",773.6126123,0.1039
+Chinatown,1253.5726650,0.0414
+Claremont-Bathgate,131.6129146,0.0061
+Clinton,978.0894666,0.4193
+"Clinton Hill",884.2172313,0.1072
+Corona,351.8016880,0.0598
+"Crown Heights North",360.8527392,0.0504
+"Crown Heights South",356.3985086,0.0250
+"Cypress Hills-City Line",206.7989232,0.0290
+"DUMBO-Vinegar Hill-Downtown Brooklyn-Boerum Hill",1464.8314880,0.0140
+"Douglas Manor-Douglaston-Little Neck",620.1307318,0.0015
+"Dyker Heights",484.6506485,0.0067
+"East Concourse-Concourse Village",155.4214404,0.0110
+"East Elmhurst",329.3541586,0.0101
+"East Flatbush-Farragut",230.3452014,0.0087
+"East Flushing",474.1082826,0.0068
+"East Harlem North",411.0115212,0.1184
+"East Harlem South",964.8732146,0.0661
+"East New York",202.1384916,0.0051
+"East New York (Pennsylvania Ave)",198.1958201,0.0052
+"East Tremont",156.6325602,0.0104
+"East Village",1009.1972490,0.1469
+"East Williamsburg",890.2126763,0.0409
+Elmhurst,505.1506283,0.0214
+Elmhurst-Maspeth,453.7170461,0.0228
+Erasmus,221.7499001,0.1033
+"Far Rockaway-Bayswater",204.4668962,0.0037
+Flatbush,341.2942070,0.0376
+Flatlands,236.3879821,0.0074
+Flushing,1188.3763920,0.0079
+"Fordham South",131.3155726,0.0159
+"Forest Hills",1494.3893610,0.0069
+"Fort Greene",1503.8932800,0.0182
+"Ft. Totten-Bay Terrace-Clearview",339.9618697,0.0022
+Gramercy,953.3248974,0.1196
+Gravesend,603.2048033,0.0415
+Greenpoint,855.2194714,0.0340
+"Hamilton Heights",555.2507572,0.0746
+Hammels-Arverne-Edgemere,217.3308277,0.0016
+Homecrest,610.8466536,0.0400
+"Hudson Yards-Chelsea-Flatiron-Union Square",3157.0122060,0.0405
+"Hunters Point-Sunnyside-West Maspeth",460.8223863,0.0205
+"Jackson Heights",475.6049443,0.0272
+"Jamaica Estates-Holliswood",295.6995079,0.0047
+"Kensington-Ocean Parkway",438.2249008,0.0252
+"Kew Gardens",317.9160266,0.0389
+"Lenox Hill-Roosevelt Island",1365.6712650,0.0884
+"Lincoln Square",14477.6767500,0.0759
+"Lower East Side",819.5021347,0.1846
+Madison,375.1184168,0.0292
+Manhattanville,708.3052643,0.1597
+"Marble Hill-Inwood",414.5769397,0.0338
+Maspeth,353.8895578,0.0028
+"Melrose South-Mott Haven North",215.6556577,0.0116
+"Middle Village",406.4280118,0.0017
+"Midtown-Midtown South",115.3793821,0.0530
+Midwood,437.1283589,0.0196
+"Morningside Heights",1220.9377730,0.0645
+Morrisania-Melrose,121.8847160,0.0118
+"Mott Haven-Port Morris",206.3015140,0.0143
+"Mount Hope",174.0797252,0.0068
+"Murray Hill",532.9541192,0.0038
+"Murray Hill-Kips Bay",1680.0509290,0.1657
+"North Corona",396.3038909,0.0778
+"North Side-South Side",1357.1830610,0.0381
+Norwood,167.5680385,0.0064
+"Ocean Hill",278.8308406,0.0398
+"Old Astoria",649.7669901,0.0448
+"Old Town-Dongan Hills-South Beach",355.5907485,0.0015
+"Ozone Park",334.6130006,0.0080
+"Park Slope-Gowanus",1226.9361020,0.0118
+Parkchester,2356.9205100,0.0218
+"Pelham Bay-Country Club-City Island",246.5450933,0.0025
+"Pelham Parkway",133.8418614,0.0043
+"Pomonok-Flushing Heights-Hillcrest",569.7491279,0.0026
+"Prospect Heights",1296.0442580,0.0098
+"Prospect Lefferts Gardens-Wingate",329.9167643,0.0379
+"Queens Village",261.1928226,0.0014
+"Queensbridge-Ravenswood-Long Island City",789.6889199,0.0429
+"Rego Park",490.6630555,0.0301
+"Richmond Hill",276.5675882,0.0039
+Ridgewood,327.3379088,0.0178
+"Rugby-Remsen Village",172.7247239,0.0092
+"Schuylerville-Throgs Neck-Edgewater Park",289.9663790,0.0011
+"Seagate-Coney Island",279.6033189,0.0103
+"Sheepshead Bay-Gerritsen Beach-Manhattan Beach",409.1534710,0.0032
+"SoHo-TriBeCa-Civic Center-Little Italy",5107.4307770,0.0360
+"Soundview-Castle Hill-Clason Point-Harding Park",167.0528712,0.0058
+"South Ozone Park",298.0483637,0.0012
+"Springfield Gardens North",220.0069350,0.0035
+"Springfield Gardens South-Brookville",260.0741740,0.0069
+"Spuyten Duyvil-Kingsbridge",600.2979855,0.0129
+"St. Albans",241.5383017,0.0039
+Stapleton-Rosebank,214.1948870,0.0021
+Steinway,439.7613421,0.0087
+"Stuyvesant Heights",330.6736678,0.0796
+"Sunset Park East",610.1697602,0.0147
+"Sunset Park West",362.5134240,0.0060
+"Turtle Bay-East Midtown",1173.2817220,0.0690
+"University Heights-Morris Heights",130.4634425,0.0094
+"Upper East Side-Carnegie Hill",4457.3511820,0.0449
+"Upper West Side",1619.5537120,0.0669
+"Van Cortlandt Village",200.7279540,0.0078
+"Van Nest-Morris Park-Westchester Square",216.5959775,0.0083
+"Washington Heights North",437.0559846,0.0441
+"Washington Heights South",410.3788875,0.0736
+"West Farms-Bronx River",175.3981680,0.0133
+"West Village",4632.8108740,0.0280
+Williamsbridge-Olinville,198.5425314,0.0028
+Williamsburg,593.8367477,0.0086
+"Windsor Terrace",835.4025659,0.0071
+Woodhaven,273.4515650,0.0108
+Woodlawn-Wakefield,191.6326062,0.0025
+Yorkville,2208.7190000,0.1250
+park-cemetery-etc-Queens,398.6068111,0.0006
